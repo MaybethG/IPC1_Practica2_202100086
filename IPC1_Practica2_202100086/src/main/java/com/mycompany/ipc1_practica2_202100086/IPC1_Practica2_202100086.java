@@ -12,7 +12,8 @@ public class IPC1_Practica2_202100086 {
 
     public static void main(String[] args) {
         
-        
+        Administrador a = new Administrador ();
+        a.setVisible(true);
         
     }
 }
