@@ -11,7 +11,7 @@ package com.mycompany.ipc1_practica2_202100086;
 public class IPC1_Practica2_202100086 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
         
         
     }
