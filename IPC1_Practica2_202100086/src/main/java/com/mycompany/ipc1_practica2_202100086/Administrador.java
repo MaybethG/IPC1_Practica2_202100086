@@ -33,6 +33,7 @@ public class Administrador extends javax.swing.JFrame {
         RegistroPe = new javax.swing.JButton();
         RegistroPro = new javax.swing.JButton();
         EnvioP = new javax.swing.JButton();
+        EnvioP1 = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -71,28 +72,39 @@ public class Administrador extends javax.swing.JFrame {
             }
         });
 
+        EnvioP1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        EnvioP1.setText("Historial de Pedidos");
+        EnvioP1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EnvioP1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(113, 113, 113)
+                .addGap(110, 110, 110)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(EnvioP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(RegistroPe, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
-                    .addComponent(RegistroPro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(133, Short.MAX_VALUE))
+                    .addComponent(RegistroPe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(RegistroPro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(EnvioP1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
+                .addGap(47, 47, 47)
                 .addComponent(RegistroPro, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(RegistroPe, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(EnvioP, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(EnvioP1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
         );
 
         pack();
@@ -114,6 +126,10 @@ public class Administrador extends javax.swing.JFrame {
     private void EnvioPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnvioPActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EnvioPActionPerformed
+
+    private void EnvioP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnvioP1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EnvioP1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,6 +168,7 @@ public class Administrador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton EnvioP;
+    private javax.swing.JButton EnvioP1;
     private javax.swing.JButton RegistroPe;
     private javax.swing.JButton RegistroPro;
     private javax.swing.JPanel jPanel1;

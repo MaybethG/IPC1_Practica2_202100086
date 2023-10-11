@@ -42,6 +42,7 @@ public class RegistroProductos extends javax.swing.JFrame {
         btssalir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tableprevisualizacion = new javax.swing.JTable();
+        btnenviardatos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,6 +77,12 @@ public class RegistroProductos extends javax.swing.JFrame {
                 {null, null},
                 {null, null},
                 {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
                 {null, null}
             },
             new String [] {
@@ -91,6 +98,14 @@ public class RegistroProductos extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(Tableprevisualizacion);
+
+        btnenviardatos.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        btnenviardatos.setText("Enviar Datos");
+        btnenviardatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnenviardatosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,6 +130,10 @@ public class RegistroProductos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btssalir)
                 .addGap(111, 111, 111))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnenviardatos)
+                .addGap(184, 184, 184))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,8 +147,10 @@ public class RegistroProductos extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(txtprecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
-                .addGap(37, 37, 37)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(btnenviardatos)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnagregarpro)
                     .addComponent(btssalir))
@@ -150,13 +171,16 @@ public class RegistroProductos extends javax.swing.JFrame {
         agregar [0]=txtproducto.getText();
 
         agregar[1]=(String)txtprecio.getText();
-        double precio2 = Double.parseDouble(agregar[1]);
         
         modelo.addRow(agregar);
         
         JOptionPane.showMessageDialog(null,"Producto Agregado");
         
     }//GEN-LAST:event_btnagregarproActionPerformed
+
+    private void btnenviardatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnenviardatosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnenviardatosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,6 +220,7 @@ public class RegistroProductos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tableprevisualizacion;
     private javax.swing.JButton btnagregarpro;
+    private javax.swing.JButton btnenviardatos;
     private javax.swing.JButton btssalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
