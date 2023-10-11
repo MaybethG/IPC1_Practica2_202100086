@@ -12,6 +12,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class RegistroProductos extends javax.swing.JFrame {
     
+    DefaultTableModel t;
+    
     DefaultTableModel modelo = new DefaultTableModel(); 
     
     public RegistroProductos() {
@@ -20,7 +22,7 @@ public class RegistroProductos extends javax.swing.JFrame {
         modelo.addColumn("Producto");
         modelo.addColumn("Precio");  
         
-        this.Tableprevisualizacion.setModel(modelo);
+        this.tablaprevisualizacion.setModel(modelo);
         
     }
 
@@ -41,7 +43,7 @@ public class RegistroProductos extends javax.swing.JFrame {
         btnagregarpro = new javax.swing.JButton();
         btssalir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Tableprevisualizacion = new javax.swing.JTable();
+        tablaprevisualizacion = new javax.swing.JTable();
         btnenviardatos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -72,7 +74,7 @@ public class RegistroProductos extends javax.swing.JFrame {
             }
         });
 
-        Tableprevisualizacion.setModel(new javax.swing.table.DefaultTableModel(
+        tablaprevisualizacion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -97,7 +99,7 @@ public class RegistroProductos extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(Tableprevisualizacion);
+        jScrollPane1.setViewportView(tablaprevisualizacion);
 
         btnenviardatos.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         btnenviardatos.setText("Enviar Datos");
@@ -133,7 +135,7 @@ public class RegistroProductos extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnenviardatos)
-                .addGap(184, 184, 184))
+                .addGap(195, 195, 195))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,9 +150,9 @@ public class RegistroProductos extends javax.swing.JFrame {
                     .addComponent(txtprecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(btnenviardatos)
                 .addGap(18, 18, 18)
+                .addComponent(btnenviardatos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnagregarpro)
                     .addComponent(btssalir))
@@ -180,6 +182,9 @@ public class RegistroProductos extends javax.swing.JFrame {
 
     private void btnenviardatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnenviardatosActionPerformed
         // TODO add your handling code here:
+    PrepararPedido prepararpedidos = new PrepararPedido();
+        prepararpedidos.LlenarDatos(tablaprevisualizacion.getValueAt(ERROR, 0).toString(),tablaprevisualizacion.getValueAt(ERROR, 1).toString());
+        
     }//GEN-LAST:event_btnenviardatosActionPerformed
 
     /**
@@ -218,13 +223,13 @@ public class RegistroProductos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable Tableprevisualizacion;
     private javax.swing.JButton btnagregarpro;
     private javax.swing.JButton btnenviardatos;
     private javax.swing.JButton btssalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tablaprevisualizacion;
     private javax.swing.JTextField txtprecio;
     private javax.swing.JTextField txtproducto;
     // End of variables declaration//GEN-END:variables

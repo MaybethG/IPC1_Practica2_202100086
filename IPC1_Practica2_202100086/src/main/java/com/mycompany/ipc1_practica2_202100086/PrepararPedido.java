@@ -11,6 +11,8 @@ import javax.swing.table.DefaultTableModel;
  * @author Fati
  */
 public class PrepararPedido extends javax.swing.JFrame {
+    
+    DefaultTableModel n;
 
     /**
      * Creates new form PrepararPedido
@@ -22,7 +24,10 @@ public class PrepararPedido extends javax.swing.JFrame {
     }
  
     public void LlenarDatos(String producto,String precio){
-        
+        this.producto = producto;
+        tablaproductos.getValueAt(ERROR, 0).toString();
+        this.precio = producto;
+        tablaproductos.getValueAt(ERROR, 1).toString();
     }
     
     /**
@@ -45,9 +50,9 @@ public class PrepararPedido extends javax.swing.JFrame {
         btnconfirmar = new javax.swing.JButton();
         btnsalir2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablapedido = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tablaproductos = new javax.swing.JTable();
         Labeltotal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,6 +76,11 @@ public class PrepararPedido extends javax.swing.JFrame {
 
         btnagregaralpedido.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         btnagregaralpedido.setText("Agregar producto al pedido");
+        btnagregaralpedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnagregaralpedidoActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel4.setText("Distancia a Recorrer");
@@ -96,8 +106,8 @@ public class PrepararPedido extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablapedido.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tablapedido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -116,11 +126,11 @@ public class PrepararPedido extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setSelectionBackground(new java.awt.Color(0, 0, 0));
-        jScrollPane1.setViewportView(jTable1);
+        tablapedido.setSelectionBackground(new java.awt.Color(0, 0, 0));
+        jScrollPane1.setViewportView(tablapedido);
 
-        jTable2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tablaproductos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tablaproductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -145,10 +155,10 @@ public class PrepararPedido extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable2.setSelectionBackground(new java.awt.Color(0, 0, 0));
-        jScrollPane2.setViewportView(jTable2);
+        tablaproductos.setSelectionBackground(new java.awt.Color(0, 0, 0));
+        jScrollPane2.setViewportView(tablaproductos);
 
-        Labeltotal.setText("jLabel6");
+        Labeltotal.setText(" ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -251,6 +261,30 @@ public class PrepararPedido extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cboxvehiculoActionPerformed
 
+    private void btnagregaralpedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregaralpedidoActionPerformed
+        // TODO add your handling code here:
+        int productoselec = tablaproductos.getSelectedRow(); 
+        try {
+            String producto,precio;
+            double suma=0;
+            
+            if(productoselec==-1){
+                JOptionPane.showMessageDialog(null, "Seleccionar un producto");
+            }else{
+                n= (DefaultTableModel) tablaproductos.getModel();
+                producto =tablaproductos.getValueAt(ERROR, 0).toString();
+                precio =tablaproductos.getValueAt(ERROR, 1).toString();
+                
+                n= (DefaultTableModel) tablapedido.getModel();
+                String producto2[] = {producto,precio};
+                n.addRow(producto2); 
+            }
+            
+        } catch (Exception e){
+            
+        }
+    }//GEN-LAST:event_btnagregaralpedidoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -299,8 +333,8 @@ public class PrepararPedido extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable tablapedido;
+    private javax.swing.JTable tablaproductos;
     private javax.swing.JTextField txtdistancia;
     // End of variables declaration//GEN-END:variables
 }
