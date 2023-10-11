@@ -4,7 +4,8 @@ package com.mycompany.ipc1_practica2_202100086;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Fati
@@ -46,6 +47,11 @@ public class PrepararPedido extends javax.swing.JFrame {
 
         cboxvehiculo.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         cboxvehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cboxvehiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxvehiculoActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Producto");
@@ -94,7 +100,15 @@ public class PrepararPedido extends javax.swing.JFrame {
             new String [] {
                 "Producto", "Precio"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jTable1.setSelectionBackground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setViewportView(jTable1);
 
@@ -109,7 +123,15 @@ public class PrepararPedido extends javax.swing.JFrame {
             new String [] {
                 "Producto", "Precio"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jTable2.setSelectionBackground(new java.awt.Color(0, 0, 0));
         jScrollPane2.setViewportView(jTable2);
 
@@ -194,7 +216,7 @@ public class PrepararPedido extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtdistanciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdistanciaActionPerformed
-        // TODO add your handling code here:
+    JOptionPane.showMessageDialog(null,"Distancia no mayor a 10 km");        // TODO add your handling code here:
     }//GEN-LAST:event_txtdistanciaActionPerformed
 
     private void btnsalir2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalir2ActionPerformed
@@ -202,6 +224,10 @@ public class PrepararPedido extends javax.swing.JFrame {
         newframe.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnsalir2ActionPerformed
+
+    private void cboxvehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxvehiculoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxvehiculoActionPerformed
 
     /**
      * @param args the command line arguments

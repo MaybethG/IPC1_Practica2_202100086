@@ -9,8 +9,25 @@ import javax.swing.JOptionPane;
  * @author Fati
  */
 public class IPC1_Practica2_202100086 {
-    double precio;
-    String producto;
+    private double precio;
+    private String producto;
+    
+        
+    public double getPrecio (){
+        return precio;
+    }
+    
+    public void setPrecio (double precio){
+        this.precio = precio;
+    }
+
+    public String getProducto() {
+        return producto;
+    }
+
+    public void setProducto(String producto) {
+        this.producto = producto;
+    }
     
 
     public static void main(String[] args) {
@@ -21,13 +38,6 @@ public class IPC1_Practica2_202100086 {
         a.setVisible(true);
         
     }
-    
-    public double getPrecio (){
-        return precio;
-    }
-    
-    public void setPrecio (double precio){
-        this.precio = precio;
-    }
+
     
 }
