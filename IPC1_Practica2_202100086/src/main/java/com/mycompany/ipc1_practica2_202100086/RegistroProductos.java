@@ -22,7 +22,6 @@ public class RegistroProductos extends javax.swing.JFrame {
         tablaprevisualizacion.setModel(modelo);
         
         PrepararPedido tablaproductos= new PrepararPedido();
-        tablaproductos.setVisible(true);
     }
     
     public void tabla1 (){
@@ -159,7 +158,7 @@ public class RegistroProductos extends javax.swing.JFrame {
 
     private void btssalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btssalirActionPerformed
         PrepararPedido newframe = new PrepararPedido ();
-        newframe.setVisible(false);
+        newframe.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btssalirActionPerformed
 
@@ -192,8 +191,8 @@ public class RegistroProductos extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Seleccionar un producto");
             }else{
                 String modelo[] = new String[2];
-                modelo[0]=tablaprevisualizacion.getValueAt(ERROR,0).toString();
-                modelo[1]=tablaprevisualizacion.getValueAt(ERROR,1).toString();
+                modelo[0]=tablaprevisualizacion.getValueAt(productoselec,0).toString();
+                modelo[1]=tablaprevisualizacion.getValueAt(productoselec,1).toString();
                 
                 PrepararPedido.modelo2.addRow(modelo);
 
