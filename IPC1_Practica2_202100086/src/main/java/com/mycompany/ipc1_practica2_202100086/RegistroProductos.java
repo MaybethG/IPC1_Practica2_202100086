@@ -12,8 +12,6 @@ import javax.swing.table.DefaultTableModel;
  */
 public class RegistroProductos extends javax.swing.JFrame {
     
-    DefaultTableModel t;
-    
     DefaultTableModel modelo = new DefaultTableModel(); 
     
     public RegistroProductos() {
@@ -21,9 +19,15 @@ public class RegistroProductos extends javax.swing.JFrame {
         initComponents();
         modelo.addColumn("Producto");
         modelo.addColumn("Precio");  
+        tablaprevisualizacion.setModel(modelo);
         
-        this.tablaprevisualizacion.setModel(modelo);
-        
+        PrepararPedido tablaproductos= new PrepararPedido();
+        tablaproductos.setVisible(true);
+    }
+    
+    public void tabla1 (){
+        modelo= new DefaultTableModel();
+        tablaprevisualizacion.setModel(modelo);
     }
 
 
@@ -76,16 +80,7 @@ public class RegistroProductos extends javax.swing.JFrame {
 
         tablaprevisualizacion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
                 "Producto", "Precio"
@@ -163,7 +158,7 @@ public class RegistroProductos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btssalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btssalirActionPerformed
-        Administrador newframe = new Administrador ();
+        PrepararPedido newframe = new PrepararPedido ();
         newframe.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btssalirActionPerformed
@@ -178,13 +173,33 @@ public class RegistroProductos extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(null,"Producto Agregado");
         
+        int productoselec = tablaprevisualizacion.getSelectedRow();
+        if(productoselec>=0){
+               
+              agregar[0]=tablaprevisualizacion.getValueAt(ERROR,0).toString();
+              agregar[1]=tablaprevisualizacion.getValueAt(ERROR,1).toString();
+                
+                PrepararPedido.modelo2.addRow(agregar);
+            }
+        
     }//GEN-LAST:event_btnagregarproActionPerformed
 
     private void btnenviardatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnenviardatosActionPerformed
         // TODO add your handling code here:
-    PrepararPedido prepararpedidos = new PrepararPedido();
-        prepararpedidos.LlenarDatos(tablaprevisualizacion.getValueAt(ERROR, 0).toString(),tablaprevisualizacion.getValueAt(ERROR, 1).toString());
+    int productoselec = tablaprevisualizacion.getSelectedRow(); 
         
+            if(productoselec==-1){
+                JOptionPane.showMessageDialog(null, "Seleccionar un producto");
+            }else{
+                String modelo[] = new String[2];
+                modelo[0]=tablaprevisualizacion.getValueAt(ERROR,0).toString();
+                modelo[1]=tablaprevisualizacion.getValueAt(ERROR,1).toString();
+                
+                PrepararPedido.modelo2.addRow(modelo);
+
+
+            }
+            tabla1();
     }//GEN-LAST:event_btnenviardatosActionPerformed
 
     /**

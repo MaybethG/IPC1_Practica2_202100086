@@ -31,7 +31,6 @@ public class Administrador extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         RegistroPe = new javax.swing.JButton();
-        RegistroPro = new javax.swing.JButton();
         EnvioP = new javax.swing.JButton();
         EnvioP1 = new javax.swing.JButton();
 
@@ -56,14 +55,6 @@ public class Administrador extends javax.swing.JFrame {
             }
         });
 
-        RegistroPro.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        RegistroPro.setText("Registro de Productos");
-        RegistroPro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegistroProActionPerformed(evt);
-            }
-        });
-
         EnvioP.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         EnvioP.setText("Envío de Pedidos");
         EnvioP.addActionListener(new java.awt.event.ActionListener() {
@@ -85,43 +76,27 @@ public class Administrador extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(EnvioP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(RegistroPe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(RegistroPro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(EnvioP1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addGap(161, 161, 161)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EnvioP1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EnvioP, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RegistroPe, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(RegistroPro, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addGap(55, 55, 55)
                 .addComponent(RegistroPe, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(63, 63, 63)
                 .addComponent(EnvioP, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGap(63, 63, 63)
                 .addComponent(EnvioP1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void RegistroPeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroPeActionPerformed
-        PrepararPedido newframe = new PrepararPedido ();
-        newframe.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_RegistroPeActionPerformed
-
-    private void RegistroProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroProActionPerformed
-        // TODO add your handling code here:
-        RegistroProductos newframe = new RegistroProductos ();
-        newframe.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_RegistroProActionPerformed
 
     private void EnvioPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnvioPActionPerformed
         // TODO add your handling code here:
@@ -130,6 +105,12 @@ public class Administrador extends javax.swing.JFrame {
     private void EnvioP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnvioP1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EnvioP1ActionPerformed
+
+    private void RegistroPeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistroPeActionPerformed
+        PrepararPedido newframe = new PrepararPedido ();
+        newframe.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_RegistroPeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,7 +151,6 @@ public class Administrador extends javax.swing.JFrame {
     private javax.swing.JButton EnvioP;
     private javax.swing.JButton EnvioP1;
     private javax.swing.JButton RegistroPe;
-    private javax.swing.JButton RegistroPro;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
