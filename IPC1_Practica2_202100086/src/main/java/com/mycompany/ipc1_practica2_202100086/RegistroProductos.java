@@ -22,6 +22,7 @@ public class RegistroProductos extends javax.swing.JFrame {
         tablaprevisualizacion.setModel(modelo);
         
         PrepararPedido tablaproductos= new PrepararPedido();
+        tablaproductos.setVisible(true);
     }
     
     public void tabla1 (){
@@ -158,7 +159,7 @@ public class RegistroProductos extends javax.swing.JFrame {
 
     private void btssalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btssalirActionPerformed
         PrepararPedido newframe = new PrepararPedido ();
-        newframe.setVisible(true);
+        newframe.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_btssalirActionPerformed
 
@@ -184,18 +185,12 @@ public class RegistroProductos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnagregarproActionPerformed
 
     private void btnenviardatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnenviardatosActionPerformed
-        // TODO add your handling code here:
-    int productoselec = tablaprevisualizacion.getSelectedRow(); 
-        
-            if(productoselec==-1){
-                JOptionPane.showMessageDialog(null, "Seleccionar un producto");
-            }else{
-                String modelo[] = new String[2];
-                modelo[0]=tablaprevisualizacion.getValueAt(productoselec,0).toString();
-                modelo[1]=tablaprevisualizacion.getValueAt(productoselec,1).toString();
+       for(int i=0;i<tablaprevisualizacion.getRowCount(); i++){
+                String agregar[] = new String[2];
+                agregar[0]=tablaprevisualizacion.getValueAt(i,0).toString();
+                agregar[1]=tablaprevisualizacion.getValueAt(i,1).toString();
                 
-                PrepararPedido.modelo2.addRow(modelo);
-
+                PrepararPedido.modelo2.addRow(agregar);
 
             }
             tabla1();
