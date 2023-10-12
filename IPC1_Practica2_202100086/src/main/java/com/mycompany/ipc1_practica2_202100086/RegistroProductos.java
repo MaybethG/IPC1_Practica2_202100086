@@ -80,7 +80,11 @@ public class RegistroProductos extends javax.swing.JFrame {
 
         tablaprevisualizacion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {"Pizza",  new Double(10.5)},
+                {"Hamburgesa",  new Double(20.0)},
+                {"Soda",  new Double(5.0)},
+                {"Sopa",  new Double(15.8)},
+                {"Pan", null}
             },
             new String [] {
                 "Producto", "Precio"
@@ -181,7 +185,6 @@ public class RegistroProductos extends javax.swing.JFrame {
                 
                 PrepararPedido.modelo2.addRow(agregar);
             }
-        
     }//GEN-LAST:event_btnagregarproActionPerformed
 
     private void btnenviardatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnenviardatosActionPerformed

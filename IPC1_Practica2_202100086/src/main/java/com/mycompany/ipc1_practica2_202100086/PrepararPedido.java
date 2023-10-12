@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class PrepararPedido extends javax.swing.JFrame {
     
-    DefaultTableModel n;
+        DefaultTableModel n;
 
     /**
      * Creates new form PrepararPedido
@@ -21,6 +21,7 @@ public class PrepararPedido extends javax.swing.JFrame {
     private String precio;
     
     public static DefaultTableModel modelo2;
+    public static DefaultTableModel modelo3;
     
     public PrepararPedido() {
         initComponents();
@@ -28,6 +29,13 @@ public class PrepararPedido extends javax.swing.JFrame {
         modelo2.addColumn("Producto");
         modelo2.addColumn("Precio");
         tablaproductos.setModel(modelo2);
+        
+        modelo3=new DefaultTableModel();
+        modelo3.addColumn("Producto");
+        modelo3.addColumn("Precio");
+        tablapedido.setModel(modelo3);
+        
+        
     }
  
     public void LlenarDatos(String producto,String precio){
@@ -36,6 +44,7 @@ public class PrepararPedido extends javax.swing.JFrame {
         this.precio = producto;
         tablaproductos.getValueAt(ERROR, 1).toString();
     }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -351,26 +360,25 @@ public class PrepararPedido extends javax.swing.JFrame {
 
     private void btnagregaralpedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregaralpedidoActionPerformed
         // TODO add your handling code here:
-        int productoselec = tablaproductos.getSelectedRow(); 
-        try {
-            String producto,precio;
-            double suma=0;
-            
-            if(productoselec==-1){
-                JOptionPane.showMessageDialog(null, "Seleccionar un producto");
-            }else{
-                n= (DefaultTableModel) tablaproductos.getModel();
-                producto =tablaproductos.getValueAt(ERROR, 0).toString();
-                precio =tablaproductos.getValueAt(ERROR, 1).toString();
+       //for(int i=0;i<tablaproductos.getRowCount(); i++){
+                //String agregar[] = new String[2];
+                //agregar[0]=tablaproductos.getValueAt(i,0).toString();
+                //agregar[1]=tablaproductos.getValueAt(i,1).toString();
                 
-                n= (DefaultTableModel) tablapedido.getModel();
-                String producto2[] = {producto,precio};
-                n.addRow(producto2); 
-            }
+                //tablapedido.addRow(agregar);
+
+            //}.
             
-        } catch (Exception e){
-            
+        int filaseleccionada = tablaproductos.getSelectedRow();
+        if(filaseleccionada>=0){
+            String agregar[] = new String[2];
+            agregar[0]=tablaproductos.getValueAt(filaseleccionada,0).toString();
+            agregar[1]=tablaproductos.getValueAt(filaseleccionada,1).toString();
+                
+            PrepararPedido.modelo3.addRow(agregar);
+            modelo2.removeRow(filaseleccionada);
         }
+            
     }//GEN-LAST:event_btnagregaralpedidoActionPerformed
 
     private void btnregistroproActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistroproActionPerformed
