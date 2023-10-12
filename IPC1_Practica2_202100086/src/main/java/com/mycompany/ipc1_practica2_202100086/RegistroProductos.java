@@ -159,7 +159,7 @@ public class RegistroProductos extends javax.swing.JFrame {
 
     private void btssalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btssalirActionPerformed
         PrepararPedido newframe = new PrepararPedido ();
-        newframe.setVisible(true);
+        newframe.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_btssalirActionPerformed
 
