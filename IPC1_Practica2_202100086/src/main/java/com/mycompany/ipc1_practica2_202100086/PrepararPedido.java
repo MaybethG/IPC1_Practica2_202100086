@@ -12,7 +12,6 @@ import javax.swing.table.DefaultTableModel;
  */
 public class PrepararPedido extends javax.swing.JFrame {
     
-        DefaultTableModel n;
 
     /**
      * Creates new form PrepararPedido
@@ -22,6 +21,8 @@ public class PrepararPedido extends javax.swing.JFrame {
     
     public static DefaultTableModel modelo2;
     public static DefaultTableModel modelo3;
+    
+    //private DefaultTableModel modeloTabla; 
     
     public PrepararPedido() {
         initComponents();
@@ -77,6 +78,7 @@ public class PrepararPedido extends javax.swing.JFrame {
         tablaproductos = new javax.swing.JTable();
         Labeltotal = new javax.swing.JLabel();
         btnregistropro = new javax.swing.JButton();
+        btnagregar = new javax.swing.JButton();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -258,6 +260,13 @@ public class PrepararPedido extends javax.swing.JFrame {
             }
         });
 
+        btnagregar.setText("Agregar");
+        btnagregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnagregarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -290,6 +299,8 @@ public class PrepararPedido extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(cboxvehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnagregar)
+                        .addGap(64, 64, 64)
                         .addComponent(btnagregaralpedido)
                         .addGap(99, 99, 99))))
             .addGroup(layout.createSequentialGroup()
@@ -320,7 +331,8 @@ public class PrepararPedido extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cboxvehiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnagregaralpedido))
+                    .addComponent(btnagregaralpedido)
+                    .addComponent(btnagregar))
                 .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -359,15 +371,6 @@ public class PrepararPedido extends javax.swing.JFrame {
     }//GEN-LAST:event_cboxvehiculoActionPerformed
 
     private void btnagregaralpedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregaralpedidoActionPerformed
-        // TODO add your handling code here:
-       //for(int i=0;i<tablaproductos.getRowCount(); i++){
-                //String agregar[] = new String[2];
-                //agregar[0]=tablaproductos.getValueAt(i,0).toString();
-                //agregar[1]=tablaproductos.getValueAt(i,1).toString();
-                
-                //tablapedido.addRow(agregar);
-
-            //}.
             
         int filaseleccionada = tablaproductos.getSelectedRow();
         if(filaseleccionada>=0){
@@ -391,6 +394,21 @@ public class PrepararPedido extends javax.swing.JFrame {
     private void btnconfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnconfirmarActionPerformed
         JOptionPane.showMessageDialog(null, "Pedido Confirmado");
     }//GEN-LAST:event_btnconfirmarActionPerformed
+
+    private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
+        int fila = tablaproductos.getSelectedRow();
+
+        
+        if(fila>=0){
+            String Datos[] = new String[2];
+            Datos[0]=tablaproductos.getValueAt(1,0).toString();
+            Datos[1]=tablaproductos.getValueAt(1,1).toString();
+                
+            modelo3.addRow(Datos);
+        
+            modelo2.removeRow(fila);
+        }
+    }//GEN-LAST:event_btnagregarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -429,6 +447,7 @@ public class PrepararPedido extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Labeltotal;
+    private javax.swing.JButton btnagregar;
     private javax.swing.JButton btnagregaralpedido;
     private javax.swing.JButton btnconfirmar;
     private javax.swing.JButton btnregistropro;
